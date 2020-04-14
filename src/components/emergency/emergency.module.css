@@ -1,0 +1,46 @@
+.container{
+    background-image: url('../../images/train.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 1200px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
+}
+
+.emergencySection{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 70px;
+    align-items: center;
+    margin-left: 50px;
+} 
+.emergencySection img{
+    height: 200px;
+    max-width: 300px;
+    transition: transform .2s;
+}
+.emergencySection img:hover{
+    transform: scale(1.5);
+}
+.emergencySection img{
+    border-radius: 100%;
+    width: 200px;
+    height: 220px;
+}
+.emergencySection p{
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: xx-large;
+    color: azure;
+}
+
+    @media only screen and (max-width: 700px){
+    .emergencySection p{
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: xx-large;
+        color: black;
+    }
+    .container{
+        background-image: none;
+    }
+} 

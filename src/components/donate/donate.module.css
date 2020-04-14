@@ -1,0 +1,30 @@
+aside img{
+    height: 200px;
+}
+
+aside{
+    display: flex;
+    flex-wrap: wrap;
+    flex:400px;
+} 
+
+.caritas{
+  float: top;
+  padding: 1em;
+}
+
+aside blockquote{
+    padding: 1em;
+    transition: .3s ease-in-out;
+    border-right: 5px solid skyblue;
+    border-top:5px solid skyblue;
+}
+
+aside img{
+    opacity: 0.5;
+}
+
+aside img:hover{
+    opacity: 1;
+}
+

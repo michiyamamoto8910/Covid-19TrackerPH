@@ -1,0 +1,17 @@
+.container{
+    background-color: #26272b;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+    margin: 0;
+    height: fit-content;
+}
+
+footer p {
+    color: azure;
+    flex:1;
+    margin-left: 20px;
+}
+
+
+

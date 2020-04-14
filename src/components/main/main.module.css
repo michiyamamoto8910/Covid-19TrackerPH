@@ -1,0 +1,52 @@
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+.mainCard{
+    border: 3px solid skyblue;
+    width: 500px;
+    text-align: center;
+    height: fit-content;
+  
+}
+.subCard{
+    border: 3px solid skyblue;
+    width: 500px;
+    text-align: center;
+    height: fit-content;
+
+}
+
+.mainCard span:nth-child(even){
+    font-family: Impact, Charcoal, sans-serif;
+    opacity: 0.5;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.mainCard span:nth-child(odd){
+    font-size: xx-large;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.subCard span:nth-child(odd){
+    font-size: xx-large;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.subCard span:nth-child(even){
+    font-family: Impact, Charcoal, sans-serif;
+    opacity: 0.5;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.death{
+    color: red;
+}
+.recovered{
+    color: green;
+}
