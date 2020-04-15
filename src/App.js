@@ -1,6 +1,8 @@
 import React from 'react'
-import { fetchData } from './api';
+import { fetchData, fetchDailyData } from './api';
 import Cards from './components/main/main';
+import {Daily} from './components/main/main';
+
 import Emergency from './components/emergency/emergency';
 import Hospitals from './components/hospitals/hospitals';
 import Donate from './components/donate/donate';
@@ -11,13 +13,16 @@ import styles from './App.css';
 class App extends React.Component {
     state = {
         data: {
-
-        }
+        
+        },
+        dailyData:[]
     }
     async componentDidMount() {
         const data = await fetchData();
+        const dailyData = await fetchDailyData();
         this.setState({
-            data: data
+            data,
+            dailyData
         })
     }
 
@@ -36,6 +41,7 @@ class App extends React.Component {
                     </main>
                 </nav>
                 <Cards data={this.state.data} />
+                <Daily daily={this.state.dailyData} />
                 <Emergency />
                 <Hospitals />
                 <Donate />

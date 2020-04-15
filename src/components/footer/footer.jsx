@@ -12,6 +12,7 @@ export const footer = () => {
                 </div>
                 <div>
                     <p>Live data from https://coronavirus-19-api.herokuapp.com/all</p>
+                    <p>and https://covid19api.com/</p>
                 </div>
                 <div className={styles.creator}>
                     <p>This website was created by Michi</p>

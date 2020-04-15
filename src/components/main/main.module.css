@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 .mainCard{
     border: 3px solid skyblue;
@@ -49,4 +49,11 @@
 }
 .recovered{
     color: green;
+}
+
+.daily{
+    display: none;
+}
+.dailylogs{
+    margin-bottom: 100px;
 }

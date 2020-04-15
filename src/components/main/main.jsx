@@ -3,6 +3,7 @@ import CountUp from 'react-countup';
 import styles from './main.module.css';
 
 const Cards = ({ data: { cases, todayCases, deaths, recovered, active, totalTests } }) => {
+
     if (!cases) {
         return 'Loading...';
     }
@@ -28,10 +29,36 @@ const Cards = ({ data: { cases, todayCases, deaths, recovered, active, totalTest
                     <span><CountUp start={0} end={active} duration={2.5} separator="," /></span><br /><br />
                 </p>
             </div>
+            <div className={styles.daily}>
+            </div>
         </div>
     )
 
 
 }
 
+export const Daily = ({ daily }) => {
+    const displayDaily = daily.map((x, index) =>
+        <li key={index}>{new Date(x.Date).toLocaleDateString()} --<strong>{x.Cases}</strong></li>);
+
+    function showDaily() {
+        const x = document.getElementById("daily")
+        x.style.display = "block"
+    }
+
+    function hideDaily() {
+        const x = document.getElementById("daily")
+        x.style.display = "none"
+    }
+    return (
+        <div className={styles.dailylogs}>
+            <button id="button" className="btn-info" onClick={showDaily}>Show Daily cases</button>
+            <div id="daily" className={styles.daily}>
+                {displayDaily}
+               <a href="#nav"><button onClick={hideDaily} className="btn btn-info">Hide Daily cases</button></a>
+            </div>
+        </div>
+    )
+
+}
 export default Cards;
