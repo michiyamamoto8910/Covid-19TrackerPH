@@ -52,8 +52,23 @@
 }
 
 .daily{
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    line-height: 50px;
+}
+
+.daily li{
+    list-style: none;
+}
+.daily h1{
+    font-size: 20px;
 }
 .dailylogs{
     margin-bottom: 100px;
+}
+.red{
+    color: red;
+}
+.dailyContainer{
+    display: none;
 }

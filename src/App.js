@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchData, fetchDailyData } from './api';
+import { fetchData, mergeData } from './api';
 import Cards from './components/main/main';
 import {Daily} from './components/main/main';
 
@@ -15,14 +15,14 @@ class App extends React.Component {
         data: {
         
         },
-        dailyData:[]
+        mergedData:[]
     }
     async componentDidMount() {
         const data = await fetchData();
-        const dailyData = await fetchDailyData();
+        const mergedData = await mergeData();
         this.setState({
             data,
-            dailyData
+            mergedData,
         })
     }
 
@@ -41,7 +41,7 @@ class App extends React.Component {
                     </main>
                 </nav>
                 <Cards data={this.state.data} />
-                <Daily daily={this.state.dailyData} />
+                <Daily daily={this.state.mergedData} />
                 <Emergency />
                 <Hospitals />
                 <Donate />

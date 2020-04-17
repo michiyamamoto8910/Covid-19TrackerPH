@@ -38,8 +38,19 @@ const Cards = ({ data: { cases, todayCases, deaths, recovered, active, totalTest
 }
 
 export const Daily = ({ daily }) => {
-    const displayDaily = daily.map((x, index) =>
-        <li key={index}>{new Date(x.Date).toLocaleDateString()} --<strong>{x.Cases}</strong></li>);
+    const displayDailyDate = daily.map((x, index) =>
+
+        <li key={index}>{new Date(x.Confirmed.Date).toLocaleDateString()}</li>);
+
+    const displayDailyConfirmed = daily.map((x, index) =>
+        <li key={index}><strong>{x.Confirmed.Cases}</strong></li>);
+
+    const displayDailyDeaths = daily.map((x, index) =>
+        <li key={index} className={styles.death}><strong>{x.Deaths}</strong></li>);
+
+    const displayDailyRecovered = daily.map((x, index) =>
+        <li key={index} className={styles.recovered}><strong>{x.Recovered}</strong></li>);
+
 
     function showDaily() {
         const x = document.getElementById("daily")
@@ -53,9 +64,27 @@ export const Daily = ({ daily }) => {
     return (
         <div className={styles.dailylogs}>
             <button id="button" className="btn-info" onClick={showDaily}>Show Daily cases</button>
-            <div id="daily" className={styles.daily}>
-                {displayDaily}
-               <a href="#nav"><button onClick={hideDaily} className="btn btn-info">Hide Daily cases</button></a>
+            <div className={styles.dailyContainer} id="daily">
+                <div className={styles.daily}>
+                    <div>
+                        <h1>Date</h1>
+                        {displayDailyDate}
+                    </div>
+                    <div>
+                        <h1>Cases</h1>
+                        {displayDailyConfirmed}
+                    </div>
+                    <div>
+                        <h1>Deaths</h1>
+                        {displayDailyDeaths}
+                    </div>
+                    <div>
+                        <h1>Recovered</h1>
+                        {displayDailyRecovered}
+                    </div>
+                </div>
+                <a href="#nav"><button onClick={hideDaily} className="btn btn-info">Hide Daily cases</button></a>
+
             </div>
         </div>
     )
