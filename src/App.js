@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchData, mergeData } from './api';
+import { fetchData, MergeData } from './api';
 import Cards from './components/main/main';
 import {Daily} from './components/main/main';
 
@@ -19,7 +19,7 @@ class App extends React.Component {
     }
     async componentDidMount() {
         const data = await fetchData();
-        const mergedData = await mergeData();
+        const mergedData = await MergeData();
         this.setState({
             data,
             mergedData,

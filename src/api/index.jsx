@@ -1,4 +1,6 @@
 import Axios from "axios";
+
+
 const url = 'https://coronavirus-19-api.herokuapp.com/countries/Philippines';
 const dailyConfirmedUrl = 'https://api.covid19api.com/total/country/Philippines/status/confirmed';
 const dailyDeathsUrl = 'https://api.covid19api.com/total/country/Philippines/status/deaths';
@@ -22,7 +24,7 @@ export const fetchData = async () => {
     }
 }
 
-export const fetchDailyConfirmedData = async () => {
+const fetchDailyConfirmedData = async () => {
     const { data } = await Axios.get(dailyConfirmedUrl);
     const Cases = data.map(x => x.Cases)
     const Date = data.map(x => x.Date);
@@ -33,7 +35,7 @@ export const fetchDailyConfirmedData = async () => {
     return neededDailyData;
 }
 
-export const fetchDailyDeathsData = async () => {
+const fetchDailyDeathsData = async () => {
     try {
         const { data } = await Axios.get(dailyDeathsUrl)
         const neededDailyData = data.map(x => x.Cases)
@@ -44,7 +46,7 @@ export const fetchDailyDeathsData = async () => {
 
 }
 
-export const fetchDailyRecoveredData = async () => {
+const fetchDailyRecoveredData = async () => {
     try {
         const { data } = await Axios.get(dailyRecoveredUrl)
         const neededDailyData = data.map(x => x.Cases)
@@ -55,16 +57,15 @@ export const fetchDailyRecoveredData = async () => {
 
 }
 
-export const mergeData = async () => {
+export const MergeData = async () => {
     try {
         const confirmed = await fetchDailyConfirmedData();
         const deaths = await fetchDailyDeathsData();
         const recovered = await fetchDailyRecoveredData();
 
         const neededDailyData = confirmed.map((x, index) => (
-            { Confirmed: x, Deaths: deaths[index], Recovered: recovered[index] }
+            { Confirmed: x, Deaths: deaths[index], Recovered: recovered[index], Num: 0 }
         ))
-            console.log(neededDailyData)
         return neededDailyData;
 
     } catch (error) {
@@ -73,3 +74,4 @@ export const mergeData = async () => {
 
 
 }
+

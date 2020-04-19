@@ -38,28 +38,48 @@ const Cards = ({ data: { cases, todayCases, deaths, recovered, active, totalTest
 }
 
 export const Daily = ({ daily }) => {
+    let computed = 0
+    let holder = 0
+    let deathHolder = 0
+    let recoveredHolder = 0
     const displayDailyDate = daily.map((x, index) =>
-
         <li key={index}>{new Date(x.Confirmed.Date).toLocaleDateString()}</li>);
 
-    const displayDailyConfirmed = daily.map((x, index) =>
-        <li key={index}><strong>{x.Confirmed.Cases}</strong></li>);
+    const displayDailyConfirmed = daily.map((x, index) => {
+        computed = Math.abs(holder - x.Confirmed.Cases)
+        holder = x.Confirmed.Cases;
+        return (
+            <li key={index}><strong>{x.Confirmed.Cases}</strong><span> (+{computed})</span></li>)
+    })
 
-    const displayDailyDeaths = daily.map((x, index) =>
-        <li key={index} className={styles.death}><strong>{x.Deaths}</strong></li>);
+    const displayDailyDeaths = daily.map((x, index) =>{
+        let computed = Math.abs(deathHolder - x.Deaths)
+        deathHolder = x.Deaths;
+        return(
+        <li key={index} className={styles.death}><strong>{x.Deaths}</strong><span> (+{computed})</span></li>);
+    })
 
-    const displayDailyRecovered = daily.map((x, index) =>
-        <li key={index} className={styles.recovered}><strong>{x.Recovered}</strong></li>);
+    const displayDailyRecovered = daily.map((x, index) => {
+        let computed = Math.abs(recoveredHolder - x.Recovered)
+        recoveredHolder = x.Recovered;
+        return(
+        <li key={index} className={styles.recovered}><strong>{x.Recovered}</strong><span> (+{computed})</span></li>);
+    })
 
 
     function showDaily() {
         const x = document.getElementById("daily")
         x.style.display = "block"
+        const btn = document.getElementById("button")
+        btn.style.display = "none"
     }
 
     function hideDaily() {
         const x = document.getElementById("daily")
         x.style.display = "none"
+        const btn = document.getElementById("button")
+        btn.style.display = "block"
+        
     }
     return (
         <div className={styles.dailylogs}>
