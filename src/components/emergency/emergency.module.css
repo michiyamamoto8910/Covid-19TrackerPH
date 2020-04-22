@@ -2,7 +2,7 @@
     background-image: url('../../images/train.jpg');
     background-size: contain;
     background-repeat: no-repeat;
-    background-size: 1200px;
+    background-size: 100vw;
     width: 100%;
     height: auto;
     margin-bottom: 100px;
@@ -31,7 +31,7 @@
 .emergencySection p{
     font-family: "Arial Black", Gadget, sans-serif;
     font-size: xx-large;
-    color: azure;
+    color: var(--text);
 }
 
     @media only screen and (max-width: 700px){
@@ -39,6 +39,8 @@
         font-family: "Arial Black", Gadget, sans-serif;
         font-size: xx-large;
         color: black;
+        color: var(--textmobile);
+
     }
     .container{
         background-image: none;
