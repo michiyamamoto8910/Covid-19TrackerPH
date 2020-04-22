@@ -12,20 +12,20 @@ const Cards = ({ data: { cases, todayCases, deaths, recovered, active, totalTest
             <div className={styles.cards}>
                 <p className={styles.mainCard}>
                     <br />
-                    <span>Total number of cases:</span><br /><br />
-                    <span><CountUp start={0} end={cases} duration={2.5} separator="," /></span><br /><br />
-                    <span>Cases today:</span><br /><br />
+                    <span id="total">Total number of cases:</span><br /><br />
+                    <span ><CountUp start={0} end={cases} duration={2.5} separator="," /></span><br /><br />
+                    <span id="total"> Cases today:</span><br /><br />
                     <span><CountUp start={0} end={todayCases} duration={2.5} separator="," /></span><br /><br />
-                    <span >Total tests:</span><br /><br />
+                    <span id="total">Total tests:</span><br /><br />
                     <span><CountUp start={0} end={totalTests} duration={2.5} separator="," /></span><br /><br />
                 </p>
                 <p className={styles.subCard}>
                     <br />
-                    <span className={styles.death}>Deaths:</span><br /><br />
+                    <span className={styles.death} id="total">Deaths:</span><br /><br />
                     <span><CountUp start={0} end={deaths} duration={2.5} separator="," /></span><br /><br />
-                    <span className={styles.recovered}>Recovered:</span><br /><br />
+                    <span className={styles.recovered} id="total">Recovered:</span><br /><br />
                     <span><CountUp start={0} end={recovered} duration={2.5} separator="," /></span><br /><br />
-                    <span>Active cases:</span><br /><br />
+                    <span id="total">Active cases:</span><br /><br />
                     <span><CountUp start={0} end={active} duration={2.5} separator="," /></span><br /><br />
                 </p>
             </div>
@@ -52,18 +52,18 @@ export const Daily = ({ daily }) => {
             <li key={index}><strong>{x.Confirmed.Cases}</strong><span> (+{computed})</span></li>)
     })
 
-    const displayDailyDeaths = daily.map((x, index) =>{
+    const displayDailyDeaths = daily.map((x, index) => {
         let computed = Math.abs(deathHolder - x.Deaths)
         deathHolder = x.Deaths;
-        return(
-        <li key={index} className={styles.death}><strong>{x.Deaths}</strong><span> (+{computed})</span></li>);
+        return (
+            <li key={index} className={styles.death}><strong>{x.Deaths}</strong><span> (+{computed})</span></li>);
     })
 
     const displayDailyRecovered = daily.map((x, index) => {
         let computed = Math.abs(recoveredHolder - x.Recovered)
         recoveredHolder = x.Recovered;
-        return(
-        <li key={index} className={styles.recovered}><strong>{x.Recovered}</strong><span> (+{computed})</span></li>);
+        return (
+            <li key={index} className={styles.recovered}><strong>{x.Recovered}</strong><span> (+{computed})</span></li>);
     })
 
 
@@ -79,12 +79,17 @@ export const Daily = ({ daily }) => {
         x.style.display = "none"
         const btn = document.getElementById("button")
         btn.style.display = "block"
-        
+
     }
+
+
+
     return (
         <div className={styles.dailylogs}>
             <button id="button" className="btn-info" onClick={showDaily}>Show Daily cases</button>
             <div className={styles.dailyContainer} id="daily">
+                <button onClick={hideDaily} className="btn btn-info" id="hidebutton">Hide Daily cases</button>
+
                 <div className={styles.daily}>
                     <div>
                         <h1>Date</h1>
@@ -103,11 +108,13 @@ export const Daily = ({ daily }) => {
                         {displayDailyRecovered}
                     </div>
                 </div>
-                <a href="#nav"><button onClick={hideDaily} className="btn btn-info">Hide Daily cases</button></a>
+                <a href="#nav"><button onClick={hideDaily} className="btn btn-info" id="hidebutton">Hide Daily cases</button></a>
 
             </div>
         </div>
     )
 
 }
+
+
 export default Cards;

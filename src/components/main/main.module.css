@@ -59,6 +59,7 @@
 
 .daily li{
     list-style: none;
+    opacity: 1;
 }
 .daily h1{
     font-size: 20px;
@@ -70,6 +71,10 @@
     color: red;
 }
 .dailyContainer{
+    display: none;
+}
+
+#hidebutton{
     display: none;
 }
 

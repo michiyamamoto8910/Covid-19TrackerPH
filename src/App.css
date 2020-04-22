@@ -1,7 +1,26 @@
+:root{
+    --gray1: #f8f8f8;
+    --gray2: #2a2e35;
+    --white0: white;
+}
+
+.dark{
+    --bg: var(--gray2);
+    --text: var(--gray1);
+    --textcolor: var(--white0);
+}
+
 html{
     scroll-behavior: smooth;
     padding: 10px;
 }
+
+body{
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
 
 body::-webkit-scrollbar{
     width: 0.25rem;
@@ -13,13 +32,16 @@ body::-webkit-scrollbar-thumb{
     background: skyblue;
 }
 
+#toggle{
+  margin-left: 85vw;
+}
 nav{
     line-height: 60px;
     position: sticky;
     top: 0;
     z-index: 1;
+    box-shadow: 0 4px 2px -2px var(--textcolor);
     background-color: #26272b;
-    box-shadow: 0 4px 2px -2px gray;
 }
 
  main ul{
@@ -53,4 +75,11 @@ main a{
   main ul{
     justify-content: space-around;
   }
+  #darktext{
+      font-size: 12px;
+  }
+  #toggle{
+    margin-left: 70vw;
+  }
 }
+
