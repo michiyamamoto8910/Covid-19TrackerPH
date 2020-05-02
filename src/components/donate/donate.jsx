@@ -8,10 +8,9 @@ import unicef from '../../images/unicef.png';
 
 export const Donate = () => {
     return (
-        <aside>
-            
+        <aside >
             <div>
-            <div >
+            <div className={styles.donate} id="donate">
             <header><h1 className="display-4">DONATE</h1></header>
             </div>
                 <div className={styles.caritas}>

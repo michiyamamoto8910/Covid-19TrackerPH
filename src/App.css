@@ -53,12 +53,12 @@ nav{
 
 main a:hover{
     text-decoration: none;
-    color: rgb(20, 232, 255)
+    color: rgb(20, 232, 255);
 }
 
 main a:active{
     text-decoration: none;
-    border-bottom: 3px solid rgb(240, 12, 12 );
+    color: rgb(20, 232, 255);
 } 
 
 main a{

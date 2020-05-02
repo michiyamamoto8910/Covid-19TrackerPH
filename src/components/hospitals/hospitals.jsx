@@ -8,7 +8,7 @@ import warning from '../../images/warning.png';
 export const hospitals = () => {
     return (
         <div>
-            <div  id="hospital">
+            <div id="hospital" className={styles.hospital}>
                 <header><h1 className="display-4">Hospitals that accepts covid patient and PUIs</h1></header>
             </div>
             <div>
@@ -105,7 +105,7 @@ export const hospitals = () => {
 
                 </section>
             </div>
-            <div id="donate"></div>
+            <div></div>
 
         </div>
 

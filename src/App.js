@@ -35,7 +35,6 @@ class App extends React.Component {
                 mergedData,
             })
     }
-    
     handleCLick() {
         const checkbox = document.getElementById('customSwitches');
         const el = document.getElementById('dark');

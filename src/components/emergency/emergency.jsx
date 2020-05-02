@@ -6,7 +6,7 @@ import flag from '../../images/flag.png';
 
 export const Emergency = () => {
     return (
-        <div id="emergency">
+        <div id="emergency" className={styles.emergency}>
             <div>
                 <header><h1 className="display-4">EMERGENCY HOTLINES</h1></header>
             </div>
