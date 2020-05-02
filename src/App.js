@@ -55,10 +55,10 @@ class App extends React.Component {
                     <main>
                         <ul>
                             <li><a href="#nav">Home</a></li>
-                            <li><a href="https://www.worldometers.info/coronavirus/" target="_blank" rel="noopener noreferrer">Global</a></li>
                             <li><a href="#emergency">Emergency</a></li>
                             <li><a href="#hospital">Hospitals</a></li>
                             <li><a href="#donate">Donate</a></li>
+                            <li id="global"><a href="https://www.worldometers.info/coronavirus/" target="_blank" rel="noopener noreferrer">Global</a></li>
                         </ul>
                     </main>
                 </nav>

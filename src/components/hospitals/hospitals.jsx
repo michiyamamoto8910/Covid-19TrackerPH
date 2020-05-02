@@ -7,15 +7,15 @@ import warning from '../../images/warning.png';
 
 export const hospitals = () => {
     return (
-        <div id="hospital">
-            <div >
-            <header><h1 className="display-4">Hospitals that accepts covid patient and PUIs</h1></header>
+        <div>
+            <div  id="hospital">
+                <header><h1 className="display-4">Hospitals that accepts covid patient and PUIs</h1></header>
             </div>
             <div>
-                    <img src={warning} alt="covid19warning" />
-                    <strong>Hospital's availability may have changed by the time of your viewing</strong>
-                </div>
-                <br/>
+                <img src={warning} alt="covid19warning" />
+                <strong>Hospital's availability may have changed by the time of your viewing</strong>
+            </div>
+            <br />
             <div className={styles.container}>
                 <div>
                     <p>Mandaluyong</p>
@@ -91,21 +91,21 @@ export const hospitals = () => {
                         <li><a href="http://www.rmc.doh.gov.ph/">Rizal Medical Center</a></li>
                     </ul>
                 </div>
-            
-            <section className={styles.section}>
-                <p>Full Capacity</p>
-                <ul>
-                    <li><a href="https://www.makatimed.net.ph/">Makati Medical City</a></li>
-                    <li><a href="https://www.themedicalcity.com/">The Medical City</a></li>
-                    <li><a href="https://www.stlukes.com.ph/">St. Luke’s Medical Center</a></li>
-                    <li><a href="https://www.cghc.edu.ph/">Chinese General Hospital</a></li>
-                    <li><a href="https://www.asianhospital.com/">The Asian Hospital and Medical Center</a></li>
-                    <li><a href="https://delossantosmed.ph/"> Delos Santos Medical Center</a></li>
-                </ul>
-                
-            </section>
-            </div>
 
+                <section className={styles.section}>
+                    <p>Full Capacity</p>
+                    <ul>
+                        <li><a href="https://www.makatimed.net.ph/">Makati Medical City</a></li>
+                        <li><a href="https://www.themedicalcity.com/">The Medical City</a></li>
+                        <li><a href="https://www.stlukes.com.ph/">St. Luke’s Medical Center</a></li>
+                        <li><a href="https://www.cghc.edu.ph/">Chinese General Hospital</a></li>
+                        <li><a href="https://www.asianhospital.com/">The Asian Hospital and Medical Center</a></li>
+                        <li><a href="https://delossantosmed.ph/"> Delos Santos Medical Center</a></li>
+                    </ul>
+
+                </section>
+            </div>
+            <div id="donate"></div>
 
         </div>
 

@@ -8,7 +8,7 @@ import unicef from '../../images/unicef.png';
 
 export const Donate = () => {
     return (
-        <aside id="donate">
+        <aside>
             
             <div>
             <div >

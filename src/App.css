@@ -53,8 +53,7 @@ nav{
 
 main a:hover{
     text-decoration: none;
-    border-bottom: 3px solid rgb(240, 12, 12 );
-    color:white;
+    color: rgb(20, 232, 255)
 }
 
 main a:active{
@@ -67,6 +66,15 @@ main a{
     color:white;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 15px;
+    transition: color ease 0.5s;
+}
+
+#global {
+  background-image: url("./images/diagonal.png");
+  padding-right: 1.5em;
+  background-position: 50px 10px;
+  background-size: .6rem .6rem;
+  background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 700px){
@@ -81,6 +89,10 @@ main a{
   }
   #toggle{
     margin-left: 70vw;
+  }
+  #global {
+      background-position: 35px 10px;
+
   }
 }
 
