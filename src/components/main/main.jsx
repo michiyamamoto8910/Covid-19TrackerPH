@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import CountUp from 'react-countup';
 import styles from './main.module.css';
 
 const Cards = ({ data: { cases, todayCases, deaths, recovered, active, totalTests } }) => {
+
     return (
         cases ?
             <div>
@@ -35,6 +36,8 @@ const Cards = ({ data: { cases, todayCases, deaths, recovered, active, totalTest
 }
 
 export const Daily = ({ daily }) => {
+    const [visibility, setVisibility] = useState(false);
+
     let computed = 0
     let holder = 0
     let deathHolder = 0
@@ -65,23 +68,26 @@ export const Daily = ({ daily }) => {
 
 
     function showDaily() {
+        const btn = document.getElementById("button")
         const x = document.getElementById("daily")
         x.style.display = "block"
-        const btn = document.getElementById("button")
         btn.style.display = "none"
     }
 
     function hideDaily() {
+        const btn = document.getElementById("button")
         const x = document.getElementById("daily")
         x.style.display = "none"
-        const btn = document.getElementById("button")
         btn.style.display = "block"
 
     }
-
+    setTimeout(() => {
+        setVisibility(true)
+    }, 2000)
 
 
     return (
+        visibility?
         <div className={styles.dailylogs}>
             <button id="button" className="btn btn-info" onClick={showDaily}>Show Daily cases</button>
             <div className={styles.dailyContainer} id="daily">
@@ -108,7 +114,8 @@ export const Daily = ({ daily }) => {
                 <a href="#nav"><button onClick={hideDaily} className="btn btn-info" id="hidebutton">Hide Daily cases</button></a>
 
             </div>
-        </div>
+        </div>:
+        <React.Fragment/>
     )
 
 }
