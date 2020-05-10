@@ -1,3 +1,4 @@
+@import '../../App.css';
 .cards{
     display: flex;
     align-items: center;
@@ -5,26 +6,21 @@
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
-.mainCard{
+.mainCard, .subCard{
     border: 3px solid skyblue;
+    border-radius: 10px;
     width: 500px;
     text-align: center;
     height: fit-content;
   
 }
-.subCard{
-    border: 3px solid skyblue;
-    width: 500px;
-    text-align: center;
-    height: fit-content;
-
-}
 
 .mainCard span:nth-child(even){
     font-family: Impact, Charcoal, sans-serif;
-    opacity: 0.5;
-    font-weight: bold;
+    opacity: var(--opacity1);
     font-size: x-large;
+    color: var(--textcolors);
+    letter-spacing: 1px;
 }
 
 .mainCard span:nth-child(odd){
@@ -32,23 +28,24 @@
     font-family: "Courier New", Courier, monospace;
 }
 
+.subCard span:nth-child(even){
+    font-family: Impact, Charcoal, sans-serif;
+    opacity: 0.5;
+    opacity: var(--opacity1);
+    font-size: x-large;
+    letter-spacing: 1px;
+}
+
 .subCard span:nth-child(odd){
     font-size: xx-large;
     font-family: "Courier New", Courier, monospace;
 }
 
-.subCard span:nth-child(even){
-    font-family: Impact, Charcoal, sans-serif;
-    opacity: 0.5;
-    font-weight: bold;
-    font-size: x-large;
-}
-
 .death{
-    color: red;
+    color: rgb(252, 115, 115);
 }
 .recovered{
-    color: green;
+    color: #03b11a;
 }
 
 .daily{

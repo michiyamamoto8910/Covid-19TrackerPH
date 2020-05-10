@@ -64,7 +64,7 @@ export const MergeData = async () => {
         const recovered = await fetchDailyRecoveredData();
 
         const neededDailyData = confirmed.map((x, index) => (
-            { Confirmed: x, Deaths: deaths[index], Recovered: recovered[index], Num: 0 }
+            { Confirmed: x, Deaths: deaths[index], Recovered: recovered[index] }
         ))
         return neededDailyData;
 

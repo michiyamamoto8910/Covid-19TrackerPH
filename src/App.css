@@ -2,13 +2,15 @@
     --gray1: #f8f8f8;
     --gray2: #2a2e35;
     --white0: white;
+    --black0: black;
+    --opacity1: 1;
 }
 
 .dark{
     --bg: var(--gray2);
     --text: var(--gray1);
     --textcolor: var(--white0);
-    --textformobile: var(--white0);
+    --opac1: var(--opacity1);
 }
 
 html{

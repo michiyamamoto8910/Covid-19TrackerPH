@@ -1,40 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import CountUp from 'react-countup';
 import styles from './main.module.css';
 
 const Cards = ({ data: { cases, todayCases, deaths, recovered, active, totalTests } }) => {
-
-    if (!cases) {
-        return 'Loading...';
-    }
     return (
-        <div>
-            <div className={styles.cards}>
-                <p className={styles.mainCard}>
-                    <br />
-                    <span id="total">Total number of cases:</span><br /><br />
-                    <span ><CountUp start={0} end={cases} duration={2.5} separator="," /></span><br /><br />
-                    <span id="total"> Cases today:</span><br /><br />
-                    <span><CountUp start={0} end={todayCases} duration={2.5} separator="," /></span><br /><br />
-                    <span id="total">Total tests:</span><br /><br />
-                    <span><CountUp start={0} end={totalTests} duration={2.5} separator="," /></span><br /><br />
-                </p>
-                <p className={styles.subCard}>
-                    <br />
-                    <span className={styles.death} id="total">Deaths:</span><br /><br />
-                    <span><CountUp start={0} end={deaths} duration={2.5} separator="," /></span><br /><br />
-                    <span className={styles.recovered} id="total">Recovered:</span><br /><br />
-                    <span><CountUp start={0} end={recovered} duration={2.5} separator="," /></span><br /><br />
-                    <span id="total">Active cases:</span><br /><br />
-                    <span><CountUp start={0} end={active} duration={2.5} separator="," /></span><br /><br />
-                </p>
+        cases ?
+            <div>
+                <div className={styles.cards}>
+                    <p className={styles.mainCard}>
+                        <br />
+                        <span id="total">Total number of cases:</span><br /><br />
+                        <span ><CountUp start={0} end={cases} duration={2.5} separator="," /></span><br /><br />
+                        <span id="total"> Cases today:</span><br /><br />
+                        <span><CountUp start={0} end={todayCases} duration={2.5} separator="," /></span><br /><br />
+                        <span id="total">Total tests:</span><br /><br />
+                        <span><CountUp start={0} end={totalTests} duration={2.5} separator="," /></span><br /><br />
+                    </p>
+                    <p className={styles.subCard}>
+                        <br />
+                        <span className={styles.death} id="total">Deaths:</span><br /><br />
+                        <span><CountUp start={0} end={deaths} duration={2.5} separator="," /></span><br /><br />
+                        <span className={styles.recovered} id="total">Recovered:</span><br /><br />
+                        <span><CountUp start={0} end={recovered} duration={2.5} separator="," /></span><br /><br />
+                        <span id="total">Active cases:</span><br /><br />
+                        <span><CountUp start={0} end={active} duration={2.5} separator="," /></span><br /><br />
+                    </p>
+                </div>
+                <div className={styles.daily}>
+                </div>
             </div>
-            <div className={styles.daily}>
-            </div>
-        </div>
+            :
+            '...Loading'
     )
-
-
 }
 
 export const Daily = ({ daily }) => {
@@ -46,8 +43,8 @@ export const Daily = ({ daily }) => {
         <li key={index}>{new Date(x.Confirmed.Date).toLocaleDateString()}</li>);
 
     const displayDailyConfirmed = daily.map((x, index) => {
-        computed = Math.abs(holder - x.Confirmed.Cases)
-        holder = x.Confirmed.Cases;
+     computed = Math.abs(holder - x.Confirmed.Cases)
+     holder = x.Confirmed.Cases;
         return (
             <li key={index}><strong>{x.Confirmed.Cases}</strong><span> (+{computed})</span></li>)
     })
@@ -86,7 +83,7 @@ export const Daily = ({ daily }) => {
 
     return (
         <div className={styles.dailylogs}>
-            <button id="button" className="btn-info" onClick={showDaily}>Show Daily cases</button>
+            <button id="button" className="btn btn-info" onClick={showDaily}>Show Daily cases</button>
             <div className={styles.dailyContainer} id="daily">
                 <button onClick={hideDaily} className="btn btn-info" id="hidebutton">Hide Daily cases</button>
 
