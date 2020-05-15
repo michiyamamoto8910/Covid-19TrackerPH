@@ -2,8 +2,15 @@
     padding-top: 60px;
     margin-top: -60px;
 }
+
 aside img{
     height: 200px;
+    opacity: 0.5;
+    margin-bottom: 15px;
+}
+
+aside img:hover{
+    opacity: 1;
 }
 
 aside{
@@ -12,11 +19,6 @@ aside{
     flex:400px;
 } 
 
-.caritas{
-  float: top;
-  padding: 1em;
-}
-
 aside blockquote{
     padding: 1em;
     transition: .3s ease-in-out;
@@ -24,11 +26,5 @@ aside blockquote{
     border-top:5px solid skyblue;
 }
 
-aside img{
-    opacity: 0.5;
-}
 
-aside img:hover{
-    opacity: 1;
-}
 
