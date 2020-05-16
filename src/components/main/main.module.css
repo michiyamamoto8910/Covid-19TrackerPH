@@ -1,10 +1,9 @@
-@import '../../App.css';
 .cards{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 .mainCard, .subCard{
     border: 3px solid skyblue;
