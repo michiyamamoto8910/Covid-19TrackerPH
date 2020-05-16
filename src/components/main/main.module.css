@@ -29,7 +29,6 @@
 
 .subCard span:nth-child(even){
     font-family: Impact, Charcoal, sans-serif;
-    opacity: 0.5;
     opacity: var(--opacity1);
     font-size: x-large;
     letter-spacing: 1px;

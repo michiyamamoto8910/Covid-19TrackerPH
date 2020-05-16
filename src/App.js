@@ -49,7 +49,7 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div className="dark" id="nav">
+            <div id="nav">
                 <nav>
                     <main>
                         <ul>
