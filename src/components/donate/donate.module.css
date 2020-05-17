@@ -3,25 +3,18 @@
     margin-top: -60px;
 }
 
-aside img{
+.donate img{
     height: 200px;
     opacity: 0.5;
     margin-bottom: 15px;
 }
 
-aside img:hover{
+.donate img:hover{
     opacity: 1;
 }
 
-aside{
-    display: flex;
-    flex-wrap: wrap;
-    flex:400px;
-} 
-
-aside blockquote{
+.donate p{
     padding: 1em;
-    transition: .3s ease-in-out;
     border-right: 5px solid skyblue;
     border-top:5px solid skyblue;
 }

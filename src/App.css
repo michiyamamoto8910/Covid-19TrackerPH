@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Roboto:ital,wght@0,400;1,100&display=swap');
+
 :root{
     --gray1: #f8f8f8;
     --gray2: #2a2e35;
@@ -12,13 +14,21 @@
     --textcolor: var(--white0);
     --opac1: var(--opacity1);
 }
-
+.hide {
+    height:0;
+    width:0;
+    visibility:hidden;   
+}    
+/* input:checked + label {
+    background-color:#e0e0e0
+} */
 html{
     scroll-behavior: smooth;
     padding: 10px;
 }
 
 body{
+    font-family: 'Roboto', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     transition: background 500ms ease-in-out, color 1000ms ease-in-out;
@@ -35,9 +45,52 @@ body::-webkit-scrollbar-thumb{
     background: skyblue;
 }
 
-#toggle{
-  margin-left: 85vw;
+.toggle{
+  margin-left: 80vw;
+  display: flex;
+  align-items: center;
 }
+#star {
+    height: 3em ;
+}
+.moon {
+animation: moonAnimation 0.5s forwards;
+transition: linear;
+}
+.sun {
+animation: sunAnimation 0.5s forwards;
+transition: linear;
+}
+
+@keyframes moonAnimation {
+    from {
+        transform: translateY(30px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes sunAnimation {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+#toggleTheme:hover {
+cursor: pointer;
+}
+header{
+    border-bottom: 1px solid skyblue;
+    margin-bottom: 50px;
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.1em;
+  }
+
+
 nav{
     line-height: 60px;
     position: sticky;
@@ -89,8 +142,8 @@ main a{
   #darktext{
       font-size: 12px;
   }
-  #toggle{
-    margin-left: 70vw;
+  .toggle{
+    margin-left: 65vw;
   }
   #global {
       background-position: 35px 10px;

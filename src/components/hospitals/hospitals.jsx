@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './hospitals.module.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import warning from '../../images/warning.png';
 
 
@@ -11,9 +10,8 @@ export const hospitals = () => {
             <div id="hospital" className={styles.hospital}>
                 <header><h1 className="display-4">Hospitals that accepts covid patient and PUIs</h1></header>
             </div>
-            <div>
-                <img src={warning} alt="covid19warning" />
-                <strong>Hospital's availability may have changed by the time of your viewing</strong>
+            <div className={styles.warning}>
+                <strong id="warning">Hospital's availability may have changed by the time of your viewing</strong>
             </div>
             <br />
             <div className={styles.container}>

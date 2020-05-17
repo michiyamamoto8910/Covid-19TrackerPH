@@ -11,6 +11,7 @@
     width: 500px;
     text-align: center;
     height: fit-content;
+    line-height: 2em;
   
 }
 
@@ -54,7 +55,6 @@
 
 .daily li{
     list-style: none;
-    opacity: 1;
 }
 .daily h1{
     font-size: 20px;
@@ -68,13 +68,32 @@
 .dailyContainer{
     display: none;
 }
-
+.dailyContent {
+    margin-left: 50px;
+}
 #hidebutton{
     display: none;
 }
+button {
+    color: black;
+    border-radius: 5px !important; 
+    background-color:  white;
+    padding: 9px 17px;
+    border: 2px solid skyblue;
+    transition-duration: 0.4s;
+}
 
+button:hover {
+    background-color: skyblue;
+    color: rgb(255, 255, 255);
+    outline: none;
+}
 @media only screen and (max-width: 700px){
 .daily span{
     display: none
+}
+
+.dailyContent {
+    margin-left: 0px;
 }
 }

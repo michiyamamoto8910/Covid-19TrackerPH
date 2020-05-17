@@ -89,9 +89,10 @@ export const Daily = ({ daily }) => {
     return (
         visibility?
         <div className={styles.dailylogs}>
-            <button id="button" className="btn btn-info" onClick={showDaily}>Show Daily cases</button>
+            <button id="button" onClick={showDaily}>Show Daily cases</button>
             <div className={styles.dailyContainer} id="daily">
-                <button onClick={hideDaily} className="btn btn-info" id="hidebutton">Hide Daily cases</button>
+            <button onClick={hideDaily} id="hidebutton">Hide Daily cases</button>
+            <div className={styles.dailyContent}>
 
                 <div className={styles.daily}>
                     <div>
@@ -111,8 +112,8 @@ export const Daily = ({ daily }) => {
                         {displayDailyRecovered}
                     </div>
                 </div>
-                <a href="#nav"><button onClick={hideDaily} className="btn btn-info" id="hidebutton">Hide Daily cases</button></a>
-
+            </div>
+            <a href="#nav"><button onClick={hideDaily} id="hidebutton">Hide Daily cases</button></a>
             </div>
         </div>:
         <React.Fragment/>
