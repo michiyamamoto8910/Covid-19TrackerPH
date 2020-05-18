@@ -56,7 +56,7 @@
 .daily li{
     list-style: none;
 }
-.daily h1{
+.daily h3{
     font-size: 20px;
 }
 .dailylogs{
@@ -89,11 +89,18 @@ button:hover {
     outline: none;
 }
 @media only screen and (max-width: 700px){
-.daily span{
+.daily .spanCounter{
     display: none
 }
 
 .dailyContent {
     margin-left: 0px;
+}
+.daily .columns{
+    margin-left: 35px;
+}
+
+.daily h3{
+    font-size: 15px;
 }
 }

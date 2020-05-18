@@ -7,8 +7,10 @@ export const footer = () => {
             <div className={styles.container}>
 
                 <div>
-                    <p>Thanks to Eldon Isidro for the picture</p>
+                    <p>Images used:</p>
                     <p>https://unsplash.com/@eldon96_</p>
+                    <p><a href="https://icons8.com/icon/67542/crescent-moon">Crescent Moon icon by Icons8</a></p>
+                    <p>Sun icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a></p>
                 </div>
                 <div>
                     <p>Live data from https://coronavirus-19-api.herokuapp.com/all</p>

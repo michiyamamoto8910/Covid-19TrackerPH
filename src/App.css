@@ -62,7 +62,7 @@ animation: sunAnimation 0.5s forwards;
 transition: linear;
 }
 
-@keyframes moonAnimation {
+@keyframes sunAnimation {
     from {
         transform: translateY(30px);
     }
@@ -71,7 +71,7 @@ transition: linear;
     }
 }
 
-@keyframes sunAnimation {
+@keyframes moonAnimation {
     from {
         transform: translateY(-30px);
     }
@@ -148,6 +148,15 @@ main a{
   #global {
       background-position: 35px 10px;
 
+  }
+  #star {
+    height: 1.5em ;
+}
+#toggleTheme {
+    font-size: small;
+}
+.toggle{
+    margin-left: 75vw;
   }
 }
 

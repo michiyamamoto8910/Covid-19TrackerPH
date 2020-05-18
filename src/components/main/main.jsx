@@ -49,21 +49,22 @@ export const Daily = ({ daily }) => {
      computed = Math.abs(holder - x.Confirmed.Cases)
      holder = x.Confirmed.Cases;
         return (
-            <li key={index}><strong>{x.Confirmed.Cases}</strong><span> (+{computed})</span></li>)
+            <li key={index}><strong><CountUp start={0} end={x.Confirmed.Cases} duration={1} separator=","></CountUp>
+            </strong><span className={styles.spanCounter}>(+{computed})</span></li>)
     })
 
     const displayDailyDeaths = daily.map((x, index) => {
         let computed = Math.abs(deathHolder - x.Deaths)
         deathHolder = x.Deaths;
         return (
-            <li key={index} className={styles.death}><strong>{x.Deaths}</strong><span> (+{computed})</span></li>);
+            <li key={index} className={styles.death}><strong><CountUp start={0} end={x.Deaths} duration={1} separator=","></CountUp></strong><span className={styles.spanCounter}> (+{computed})</span></li>);
     })
 
     const displayDailyRecovered = daily.map((x, index) => {
         let computed = Math.abs(recoveredHolder - x.Recovered)
         recoveredHolder = x.Recovered;
         return (
-            <li key={index} className={styles.recovered}><strong>{x.Recovered}</strong><span> (+{computed})</span></li>);
+            <li key={index} className={styles.recovered}><strong><CountUp start={0} end={x.Recovered} duration={1} separator=","></CountUp></strong><span className={styles.spanCounter}> (+{computed})</span></li>);
     })
 
 
@@ -96,19 +97,19 @@ export const Daily = ({ daily }) => {
 
                 <div className={styles.daily}>
                     <div>
-                        <h1>Date</h1>
+                        <h3>Date</h3>
                         {displayDailyDate}
                     </div>
-                    <div>
-                        <h1>Cases</h1>
+                    <div className={styles.columns}>
+                        <h3>Cases</h3>
                         {displayDailyConfirmed}
                     </div>
-                    <div>
-                        <h1>Deaths</h1>
+                    <div className={styles.columns}>
+                        <h3>Deaths</h3>
                         {displayDailyDeaths}
                     </div>
-                    <div>
-                        <h1>Recovered</h1>
+                    <div className={styles.columns}>
+                        <h3>Recovered</h3>
                         {displayDailyRecovered}
                     </div>
                 </div>

@@ -9,9 +9,16 @@
 
 footer p {
     color: azure;
-    flex:1;
     margin-left: 20px;
 }
 
+footer a{
+    color: 	rgb(0,150,254);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
 
 
